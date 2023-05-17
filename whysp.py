@@ -12,7 +12,7 @@ except:
 import whisper
 
 try:
-    model = sys.argv[2]
+    model =  whisper.load_model(sys.argv[2])
 except: 
     model = whisper.load_model("base")
 
