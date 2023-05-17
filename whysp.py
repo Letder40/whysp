@@ -24,10 +24,10 @@ except:
 
 video = video.streams.get_audio_only()
 video.download(filename=".toRead.mp4")
-print("video download complete...")
+print(" [?] video download complete, Transcribing it...")
 
-print(" [?] Transcribing it...")
 result = model.transcribe(".toRead.mp4")
 remove(".toRead.mp4")
+
 open("transcription.txt", x).write(result["text"])
 print("\n [+] Transcripttion complete ")
