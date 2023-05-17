@@ -3,6 +3,7 @@ import pytube
 import sys
 from os import remove
 
+
 try:
     link = sys.argv[1]
 except: 
@@ -29,5 +30,11 @@ print(" [?] video download complete, Transcribing it...")
 result = model.transcribe(".toRead.mp4")
 remove(".toRead.mp4")
 
-open("transcription.txt", "x").write(result["text"])
+transcription = str(result["text"])
+transcription = transcription.replace(".", ".\n")
+try: 
+    open("transcription.txt", "x").write(transcription)
+except:
+    open("transcription.txt", "w").write(transcription)
+
 print("\n [+] Transcripttion complete ")
