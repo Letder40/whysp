@@ -29,5 +29,5 @@ print(" [?] video download complete, Transcribing it...")
 result = model.transcribe(".toRead.mp4")
 remove(".toRead.mp4")
 
-open("transcription.txt", x).write(result["text"])
+open("transcription.txt", "x").write(result["text"])
 print("\n [+] Transcripttion complete ")
